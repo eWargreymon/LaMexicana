@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/styles.css">
 
+    <link href="https://fonts.googleapis.com/css?family=Erica+One|Sigmar+One&display=swap" rel="stylesheet">
+
     <!-- Bootstrap Scripts -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -18,29 +20,43 @@
   </head>
   <body>
 
+    <header id="title">
+      <div class="first-container">
+        <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
+          <a href="" class="navbar-brand">La Mexicana</a>
 
-    <header>
-      <nav>
-        <a href="logo"></a>
-        <ul>
-          <li>Productos</li>
-          <li>Dónde estamos</li>
-          <li>Reservas</li>
-          <li>Sobre nosotros</li>
-        </ul>
-      </nav>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-      <div class="row">
+          <div class="collapse navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item"><a class="nav-link" href="productos" data-toggle="collapse" data-target=".navbar-collapse.show">Productos</a></li>
+              <li class="nav-item"><a class="nav-link" href="productos" data-toggle="collapse" data-target=".navbar-collapse.show">Dónde estamos</a></li>
+              <li class="nav-item"><a class="nav-link" href="productos" data-toggle="collapse" data-target=".navbar-collapse.show">Reservas</a></li>
+              <li class="nav-item"><a class="nav-link" href="productos" data-toggle="collapse" data-target=".navbar-collapse.show">Sobre nosotros</a></li>
+            </ul>
+          </div>
+        </nav>
 
+        <div class="row intro-container" id="intro">
+          <div class="col-lg-6">
+            <h1 class="intro-heading">Autentica comida mexicana en Gran Canaria</h1>
+          </div>
+          <div class="col-lg-6">
+            <img class="intro-img" src="http://banquetesgl.com/wp-content/uploads/2019/06/tacos-comida-mexicana-1024x683.jpg" alt="">
+          </div>
+        </div>
       </div>
+
     </header>
 
 
-    <section class="Products">
+    <section id="products">
 
     </section>
 
-    <section class="Reviews">
+    <section id="reviews">
 
     </section>
 
