@@ -27,7 +27,8 @@ body {
 }
 
 .nav-item {
-  padding: 0 18px;
+  font-family: 'Ubuntu', sans-serif;
+  padding: 0 0.5em;
 }
 
 .nav-link {
