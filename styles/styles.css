@@ -1,3 +1,5 @@
+/* General content */
+
 body {
   font-family: 'Sigmar One', cursive;
   text-align: center;
@@ -9,6 +11,7 @@ body {
   font-size: 3.5rem;
   font-weight: 900;
   line-height: 1.5;
+  color: #000;
 }
 
 /* Navigation Bar */
@@ -40,7 +43,7 @@ body {
 
 .first-container {
   text-align: left;
-  background-color: orange;
+  background-color: #f49600;
 }
 
 .first-container {
@@ -54,19 +57,49 @@ body {
   border-radius: 5%;
 }
 
-/* Media Queries */
+/* Products section */
 
-@media (max-width: 1028px){
-  .first-container {
-    text-align: center;
-  }
-  .intro-img {
-    width: 60%;
-  }
+#products {
+  padding: 5em;
+  position: relative;
 }
 
-@media (max-width: 990px){
-  .intro-img {
-    width: 50%;
-  }
+.products-heading {
+  padding-bottom: 1.5em;
+  font-size: 2.5em;
+}
+
+.product-description h3{
+  padding-top: 1em;
+  font-size: 1.5em;
+}
+
+.product-description p{
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.product-description img {
+  width: 90%;
+  border-radius: 5%;
+}
+
+/* Reviews Section */
+
+#reviews {
+  background-color: #f49600;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+#reviews img {
+  border-radius: 50%;
+  width: 15%;
+  margin: 1em;
+}
+
+.carousel-item {
+  padding: 7% 15%;
+}
+
+.carousel-review {
+  font-size: 3rem;
 }

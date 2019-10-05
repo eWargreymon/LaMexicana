@@ -11,12 +11,17 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/styles.css">
 
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Ubuntu|Sigmar+One&display=swap" rel="stylesheet">
 
     <!-- Bootstrap Scripts -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/43e42a9ddc.js"></script>
+
   </head>
   <body>
 
@@ -41,23 +46,63 @@
 
         <div class="row intro-container" id="intro">
           <div class="col-lg-6">
-            <h1 class="intro-heading">Autentica comida mexicana en Gran Canaria</h1>
+            <h1 class="intro-heading">Un trocito de México en Gran Canaria</h1>
           </div>
           <div class="col-lg-6">
-            <img class="intro-img" src="http://banquetesgl.com/wp-content/uploads/2019/06/tacos-comida-mexicana-1024x683.jpg" alt="">
+            <img class="intro-img" src="assets/tacos.jpg" alt="tacos">
           </div>
         </div>
       </div>
 
     </header>
 
-
     <section id="products">
+
+      <h2 class="products-heading">Conoce nuestros productos destacados</h2>
+
+      <div class="row">
+        <div class="col-lg-4 product-description">
+          <img src="assets/nachos.jpg" alt="nachos">
+          <h3>Deliciosos nachos.</h3>
+          <p>No querrás dejar de comerlos.</p>
+        </div>
+        <div class="col-lg-4 product-description">
+          <img src="assets/burritos.jpg" alt="burritos">
+          <h3>Increíbles tacos</h3>
+          <p>Bla bla.</p>
+        </div>
+        <div class="col-lg-4 product-description">
+          <img src="assets/chilli_carne.jpg" alt="chilli con carne">
+          <h3>Chilli picante con carne.</h3>
+          <p>Bla bla.</p>
+        </div>
 
     </section>
 
     <section id="reviews">
 
+      <div id="review-carousel" class="carousel slide" data-ride="carousel" data-interval=3000>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <h2 class="carousel-review">Si quieren comer auténtica comida mexicana, sólo tienes que acercarte aquí. La comida está hecha con esmero y gran conocimiento de la gastronomía Mexicana.</h2>
+            <img src="assets/review1.jpeg" alt="profile picture">
+            <em>Marcos <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i></em>
+          </div>
+          <div class="carousel-item">
+            <h2 class="carousel-review">La comida en un restaurante es esencial, pero el servicio, el trato acogedor y el respeto son detalles que me animan siempre a volver. Todo este conjunto en este restaurante lo hacen especial e incomparable.</h2>
+            <img class="review-image" src="assets/review2.jpg" alt="profile picture">
+            <em>Raquel <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star-half"></i> </em>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#review-carousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#review-carousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
     </section>
 
 
