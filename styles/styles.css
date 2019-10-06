@@ -5,6 +5,10 @@ body {
   text-align: center;
 }
 
+p {
+  font-family: 'Ubuntu', sans-serif;
+}
+
 /* Headings */
 
 .intro-heading {
@@ -30,7 +34,7 @@ body {
 }
 
 .nav-item {
-  font-family: 'Ubuntu', sans-serif;
+
   padding: 0 0.5em;
 }
 
@@ -74,10 +78,6 @@ body {
   font-size: 1.5em;
 }
 
-.product-description p{
-  font-family: 'Ubuntu', sans-serif;
-}
-
 .product-description img {
   width: 90%;
   border-radius: 5%;
@@ -102,4 +102,16 @@ body {
 
 .carousel-review {
   font-size: 3rem;
+}
+
+#footer {
+  padding: 2em;
+}
+
+.footer-right {
+  padding: 0 1% 2%;
+}
+
+.copyright {
+  margin: 0;
 }
