@@ -1,0 +1,24 @@
+h2 {
+  padding-top: 10%;
+}
+#footer {
+  padding: 1em;
+  background-color: black;
+}
+
+.white {
+  color: white;
+}
+
+.map {
+  padding: 5% 5% 5% 10%;
+}
+
+.general-pad {
+  padding: 0 10% 0 5%;
+}
+
+
+.copyright-and-rrss {
+  padding-bottom: 3%;
+}

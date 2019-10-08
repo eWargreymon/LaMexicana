@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>La Mexicana - Reserva</title>
+  <meta name="keywords" content="Restaurante, Comida Mexicana, Gran Canaria">
+  <meta name="description" content="Restaurante de comida mexicana en Gran Canaria">
+  <meta name="author" content="Grupo 8">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/styles-reserva.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700|Sigmar+One&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap Scripts -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- DateTime Picker Handlers -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/43e42a9ddc.js"></script>
+
+</head>
+
+<body>
+
+  <header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark" id="navbar">
+      <a href="index.html"><img src="assets/logo.png" alt="logotipo" class="navbar-brand"></a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarToggler">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link " href="carta.html">Carta</a></li>
+          <li class="nav-item"><a class="nav-link active" href="reserva.html">Reservas</a></li>
+          <li class="nav-item"><a class="nav-link" href="localizacion.html">Dónde estamos</a></li>
+          <li class="nav-item"><a class="nav-link" href="">Login</a></li>
+        </ul>
+      </div>
+    </nav>
+
+  </header>
+
+  <section id="form">
+    <form>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="name">Nombre</label>
+          <input type="text" class="form-control" id="name" placeholder="Nombre">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="number">Número de personas</label>
+          <input type="number" class="form-control" min="1" max="20" value="1" id="number">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="name">Telefono</label>
+          <input type="text" class="form-control" id="name" placeholder="Nombre">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="number">Email</label>
+          <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label">Fecha y hora</label>
+        <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+          <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1" />
+          <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="comments">Comentarios adicionales</label>
+        <textarea class="form-control" id="comments" rows="4"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Reservar</button>
+    </form>
+
+  </section>
+
+  <footer id="footer">
+    <div class="row">
+      <div class="col-lg-6 contact white">
+        <h3>Datos de contacto.</h3>
+        <p>C/ La Centrífuga 22, Vecindario</p>
+        <p>Las Palmas de Gran Canaria</p>
+        <p><strong>Teléfono:</strong> 928 12 58 68</p>
+      </div>
+      <div class="col-lg-6 contact white">
+        <h3>Horarios</h3>
+        <p>Lunes a Viernes de 12.00 a 20.00 horas.</p>
+        <p>Sábados de 12.00 a 23.00 horas.</p>
+        <p>Domingos de 12.00 a 15.00 horas.</p>
+      </div>
+    </div>
+    <div class="copyright-and-rrss white">
+      <i class="rrss fab fa-twitter"></i>
+      <i class="rrss fab fa-instagram"></i>
+      <i class="rrss fab fa-facebook-f"></i>
+      <i class="rrss fas fa-envelope"></i>
+      <p class="copyright">© Copyright 2019 La Mexicana</p>
+    </div>
+  </footer>
+
+  <!-- JS Script -->
+  <script src="index.js" charset="utf-8"></script>
+
+</body>
+
+</html>

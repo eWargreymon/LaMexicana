@@ -1,0 +1,25 @@
+body {
+  text-align: center;
+}
+.products {
+  padding: 3em;
+}
+.list-group {
+  padding: 0 2em;
+}
+
+.carta-img {
+  width: 70%;
+  border-radius: 10%;
+}
+
+#footer {
+  background-color: black;
+}
+
+.white {
+  color: white;
+}
+.copyright-and-rrss {
+  border-top: 1px solid white;
+}

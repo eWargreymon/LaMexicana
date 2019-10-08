@@ -1,31 +1,22 @@
 /* General content */
 
 body {
-  font-family: 'Sigmar One', cursive;
+  font-family: 'Ubuntu', sans-serif;
   text-align: center;
 }
 
-p {
-  font-family: 'Ubuntu', sans-serif;
-}
+/* Title Section */
 
-/* Headings */
-
-.intro-heading {
-  font-size: 3.5rem;
-  font-weight: 900;
-  line-height: 1.5;
-  color: #000;
-}
-
-/* Navigation Bar */
+  /* Navigation Bar */
 
 .navbar {
-  padding: 0 0 4.5rem;
+  padding: 2% 10% 2%;
+  text-align: left;
+  background-color: #000;
 }
 
 .navbar-brand {
-  font-size: 2.0rem;
+  width: 40%;
   transition: transform .2s;
 }
 
@@ -34,34 +25,35 @@ p {
 }
 
 .nav-item {
-
+  font-family: 'Ubuntu', sans-serif;
   padding: 0 0.5em;
 }
 
 .nav-link {
   font-size: 1.2rem;
-  font-weight: 300;
 }
 
-/* Title Section */
+  /* Intro */
 
-.first-container {
-  text-align: left;
-  background-color: #f49600;
+.intro-container-img {
+  padding: 20%;
+  background-image: url(/Users/ana/Desktop/LaMexicana2/assets/tacos.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
 }
 
-.first-container {
-  padding: 3% 10% 7%;
+.intro-container-heading {
+  padding: 2%;
+  background-color: #000;
 }
 
-/* Title Image */
-
-.intro-img {
-  width: 90%;
-  border-radius: 5%;
+.intro-heading {
+  font-size: 2em;
+  color: #fff;
 }
 
-/* Products section */
+/* Products Section */
 
 #products {
   padding: 5em;
@@ -71,6 +63,7 @@ p {
 .products-heading {
   padding-bottom: 1.5em;
   font-size: 2.5em;
+  font-weight: 700;
 }
 
 .product-description h3{
@@ -86,8 +79,7 @@ p {
 /* Reviews Section */
 
 #reviews {
-  background-color: #f49600;
-  font-family: 'Ubuntu', sans-serif;
+  background-color: #ffbb00;
 }
 
 #reviews img {
@@ -101,17 +93,67 @@ p {
 }
 
 .carousel-review {
-  font-size: 3rem;
+  font-size: 3em;
 }
+
+/* Footer Section */
 
 #footer {
   padding: 2em;
 }
 
-.footer-right {
-  padding: 0 1% 2%;
+.contact {
+  padding-bottom: 1.5em;
+}
+
+.contact h3 {
+  font-weight: 700;
+}
+
+.rrss {
+  padding: 0.5% 0.5%;
 }
 
 .copyright {
   margin: 0;
+}
+
+.copyright-and-rrss {
+  margin: 0 8%;
+  padding-top: 2%;
+  border-top: 1px solid black;
+}
+
+/* Media Queries */
+
+  /* Tablets and phones */
+
+@media (max-width: 990px){
+
+  /* Title Section */
+
+  .navbar-brand {
+    width: 30%;
+  }
+  .intro-heading {
+    font-size: 1.5em;
+  }
+
+  /* Products Section */
+
+  #products {
+    padding: 2em 0.5em;
+  }
+  .products-heading {
+    font-size: 1.7em;
+  }
+  .product-description img {
+    width: 60%;
+  }
+
+  /* Reviews Section */
+
+  .carousel-review {
+    font-size: 1.5em;
+  }
 }

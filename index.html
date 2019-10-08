@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="styles/styles.css">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Ubuntu|Sigmar+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700|Sigmar+One&display=swap" rel="stylesheet">
 
   <!-- Bootstrap Scripts -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -28,32 +28,28 @@
 <body>
 
   <header id="title">
-    <div class="first-container">
-      <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
-        <a href="" class="navbar-brand">La Mexicana</a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <nav class="navbar navbar-expand-lg navbar-dark" id="navbar">
+      <a href="index.html"><img src="assets/logo.png" alt="logotipo" class="navbar-brand"></a>
 
-        <div class="collapse navbar-collapse" id="navbarToggler">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a class="nav-link" href="productos" data-toggle="collapse" data-target=".navbar-collapse.show">Productos</a></li>
-            <li class="nav-item"><a class="nav-link" href="productos" data-toggle="collapse" data-target=".navbar-collapse.show">Dónde estamos</a></li>
-            <li class="nav-item"><a class="nav-link" href="productos" data-toggle="collapse" data-target=".navbar-collapse.show">Reservas</a></li>
-            <li class="nav-item"><a class="nav-link" href="productos" data-toggle="collapse" data-target=".navbar-collapse.show">Sobre nosotros</a></li>
-          </ul>
-        </div>
-      </nav>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-      <div class="row intro-container" id="intro">
-        <div class="col-lg-6">
-          <h1 class="intro-heading">Un trocito de México en Gran Canaria</h1>
-        </div>
-        <div class="col-lg-6">
-          <img class="intro-img" src="assets/tacos.jpg" alt="tacos">
-        </div>
+      <div class="collapse navbar-collapse" id="navbarToggler">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="carta.html">Carta</a></li>
+          <li class="nav-item"><a class="nav-link" href="reserva.html">Reservas</a></li>
+          <li class="nav-item"><a class="nav-link" href="localizacion.html">Dónde estamos</a></li>
+          <li class="nav-item"><a class="nav-link" href="">Login</a></li>
+        </ul>
       </div>
+    </nav>
+
+    <div class="intro-container-img"></div>
+
+    <div class="intro-container-heading">
+      <h1 class="intro-heading">Un trocito de México en Gran Canaria</h1>
     </div>
 
   </header>
@@ -65,12 +61,12 @@
     <div class="row">
       <div class="col-lg-4 product-description">
         <img src="assets/nachos.jpg" alt="nachos">
-        <h3>Deliciosos nachoso.</h3>
+        <h3>Deliciosos nachos.</h3>
         <p>No querrás dejar de comerlos.</p>
       </div>
       <div class="col-lg-4 product-description">
         <img src="assets/burritos.jpg" alt="burritos">
-        <h3>Increíbles tacos.</h3>
+        <h3>Increíbles burritos.</h3>
         <p>Combínalos como tú quieras.</p>
       </div>
       <div class="col-lg-4 product-description">
@@ -107,33 +103,32 @@
     </div>
   </section>
 
-  <section id="contact">
+  <section id="booking">
 
   </section>
 
   <footer id="footer">
-    <div class="contact">
       <div class="row">
-        <div class="col-lg-4">
+        <div class="col-lg-6 contact">
           <h3>Datos de contacto.</h3>
           <p>C/ La Centrífuga 22, Vecindario</p>
           <p>Las Palmas de Gran Canaria</p>
           <p><strong>Teléfono:</strong> 928 12 58 68</p>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-6 contact">
           <h3>Horarios</h3>
-          <p>Lunes a Viernes de 06.45 a 22.45 horas.</p>
-          <p>Sábados de 08.00 a 18.00 horas.</p>
-          <p>Domingos de 08.00 a 15.00 horas.</p>
+          <p>Lunes a Viernes de 12.00 a 20.00 horas.</p>
+          <p>Sábados de 12.00 a 23.00 horas.</p>
+          <p>Domingos de 12.00 a 15.00 horas.</p>
         </div>
-        <div class="col-lg-4">
-          <i class="footer-right fab fa-twitter"></i>
-          <i class="footer-right fab fa-instagram"></i>
-          <i class="footer-right fab fa-facebook-f"></i>
-          <i class="footer-right fas fa-envelope"></i>
-          <p class="copyright footer-right margin-bottom">© Copyright 2019 La Mexicana</p>
-        </div>
-    </div>
+      </div>
+      <div class="copyright-and-rrss">
+        <i class="rrss fab fa-twitter"></i>
+        <i class="rrss fab fa-instagram"></i>
+        <i class="rrss fab fa-facebook-f"></i>
+        <i class="rrss fas fa-envelope"></i>
+        <p class="copyright">© Copyright 2019 La Mexicana</p>
+      </div>
   </footer>
 </body>
 

@@ -1,0 +1,26 @@
+body {
+  text-align: left;
+}
+
+#form {
+  padding: 8em;
+}
+
+.bootstrap-datetimepicker-widget.dropdown-menu.custom-datetimepicker {
+   opacity: 1 !important;
+    filter: alpha(opacity=100);
+    visibility: visible;
+    margin-top: 5px;
+}
+
+#footer {
+  text-align: center;
+  background-color: black;
+}
+
+.white {
+  color: white;
+}
+.copyright-and-rrss {
+  border-top: 1px solid white;
+}
