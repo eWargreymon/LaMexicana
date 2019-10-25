@@ -1,9 +1,7 @@
-body {
-  text-align: center;
-}
 .products {
   padding: 3em;
 }
+
 .list-group {
   padding: 0 2em;
 }
@@ -13,6 +11,8 @@ body {
   border-radius: 10%;
 }
 
+/* Footer Section */
+
 #footer {
   background-color: black;
 }
@@ -20,6 +20,7 @@ body {
 .white {
   color: white;
 }
+
 .copyright-and-rrss {
   border-top: 1px solid white;
 }
