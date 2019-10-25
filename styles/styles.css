@@ -37,7 +37,7 @@ body {
 
 .intro-container-img {
   padding: 20%;
-  background-image: url(/Users/ana/Desktop/LaMexicana2/assets/tacos.jpg);
+  background-image: url(../assets/tacos.jpg);
   background-repeat: no-repeat;
   background-size: 100%;
   background-attachment: fixed;
