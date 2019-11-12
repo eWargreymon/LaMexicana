@@ -3,8 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/styles-login.css">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="index.js"></script>
 </head>
 <body>
-
+<div class="simple-login-container">
+    <h2>Inicia sesión</h2>
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <input type="text" id="username" name="username" class="form-control" placeholder="Username">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <input type="password" id="password" name="password" placeholder="Enter your Password" class="form-control">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <button onclick="getUser()" id="login-button" class="btn btn-block btn-login">
+                Aceptar
+            </button>
+        </div>
 </body>
 </html>

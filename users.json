@@ -1,12 +1,14 @@
-{
-  [
-    "buyer": {
-      "username": "sonoo",
-      "password": 56000
-    },
-    "buyer2": {
-    "username": "sonoo",
-    "password":  56000
+[
+  {
+    "username": "prueba@prueba.com",
+    "password": "prueba"
+  },
+  {
+    "username": "prueba2@prueba.com",
+    "password": "prueba2"
+  },
+  {
+    "username": "prueba3@prueba.com",
+    "password": "prueba3"
   }
-  ]
-}
+]
