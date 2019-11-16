@@ -24,3 +24,22 @@ h2 {
 .copyright-and-rrss {
   padding-bottom: 3%;
 }
+
+/* Media Queries */
+
+  /* Tablets and phones */
+
+@media (max-width: 990px){
+
+  h2 {
+    padding-top: 5%;
+  }
+
+  .mapouter {
+    padding: 0 20%;
+  }
+
+  .info {
+    padding: 5% 0;
+  }
+}

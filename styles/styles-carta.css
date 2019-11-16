@@ -24,3 +24,22 @@
 .copyright-and-rrss {
   border-top: 1px solid white;
 }
+
+/* Media Queries */
+
+  /* Tablets and phones */
+
+@media (max-width: 990px){
+
+  .products {
+    padding: 1em;
+  }
+
+  .products-col {
+    padding: 1em;
+  }
+
+  .carta-img {
+    display: none;
+  }
+}
