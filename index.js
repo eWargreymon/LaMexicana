@@ -14,8 +14,10 @@ $(document).ready(function () {
 
 function login() {
     $.getJSON("./users.json", function (json) {
-        var inputUsername = document.getElementById("username").value;
-        var inputPassword = document.getElementById("password").value;
+        var inputUsername = document.getElementById("inputEmail").value;
+        var inputPassword = document.getElementById("inputPassword").value;
+
+        console.log("Prueba");
 
         for (var user in json) {
             if (json.hasOwnProperty(user)) {
@@ -45,6 +47,5 @@ function getUserLogged() {
 function logOut() {
     sessionStorage.clear();
 }
-
 
 
