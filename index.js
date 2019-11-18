@@ -9,7 +9,7 @@ $(document).ready(function () {
         $("li:has('a'):contains('Login')").remove();
         $(".navbar-nav").append('<li class="nav-item"><a class="nav-link" href="index.html" onclick="logOut();">Log out</a></li>');
 
-        console.log(getUserLogged());
+        //console.log(getUserLogged());
 
         var user = JSON.parse(sessionStorage.getItem("user"));
         for (var i = 0; i < user.reservations.length; i++) {
@@ -129,7 +129,7 @@ function reservation() {
         //saveUser(user);
 
     } else {
-        if (confirm('Para hacer una revera debe estar registrado, ¿ desea hacerlo ?.') === true) {
+        if (confirm('Para hacer una revera debe estar registrado, ¿ Desea hacerlo ?.')) {
             location.href = "login.html";
         }
 
