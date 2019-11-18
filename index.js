@@ -114,6 +114,11 @@ function reservation() {
         var inputDate = document.getElementById("date").value;
         var inputHour = document.getElementById("time").value;
         var inputObservation = document.getElementById("comments").value;
+        var inputEmail = document.getElementById("email").value;
+        if(inputNombre == '' || inputDate == ''|| inputPhone == '' || inputEmail == '' || inputHour == '') {
+            alert("Debe rellenar el campo nombre antes de continuar");
+            return;
+        }
         alert("Reserva realizada con éxito para la fecha: " + inputDate);
         var user1 = JSON.parse(sessionStorage.getItem("user"));
 
@@ -131,6 +136,7 @@ function reservation() {
     } else {
         if (confirm('Para hacer una revera debe estar registrado, ¿ Desea hacerlo ?.')) {
             location.href = "login.html";
+            return;
         }
 
     }

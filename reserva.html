@@ -72,39 +72,38 @@
         <div class="form-row">
             <div class="form-group col-lg-6">
                 <label for="name">Nombre</label>
-                <input type="text" class="form-control" id="name" placeholder="Nombre">
+                <input type="text" class="form-control" id="name" placeholder="Nombre"required>
             </div>
             <div class="form-group col-lg-6">
                 <label for="number">Número de personas</label>
-                <input type="number" class="form-control" min="1" max="20" value="0" id="number">
+                <input type="number" class="form-control" min="1" max="20" value="1" id="number" required>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-lg-6">
                 <label for="name">Telefono</label>
-                <input type="number" class="form-control" id="phone" placeholder="Teléfono">
+                <input type="number" class="form-control" id="phone" placeholder="Teléfono" required>
             </div>
             <div class="form-group col-lg-6">
-                <label for="number">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Email">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Email" required>
             </div>
         </div>
         <div class="form-group">
             <label class="control-label">Fecha y hora</label>
             <input type="date" id="date" name="trip-start"
-                   value="2018-07-22"
-                   min="2018-01-01" max="2025-12-31">
+                   value="2019-11-19"
+                   min="2019-11-19" max="2025-12-31" required>
             <input type="time" id="time" name="appt"
-                   min="09:00" max="18:00" required>
+                   min="12:00" max="23:00" required>
         </div>
         <div class="form-group">
             <label for="comments">Comentarios adicionales</label>
             <textarea class="form-control" id="comments" rows="4"></textarea>
         </div>
-
-
+        <div class="form-group">
             <button id="reservar" type="submit" class="btn btn-primary" onclick="reservation()">Reservar</button>
-
+        </div>
     </form>
     <div id="card" class="card" style="width: 18rem;">
         <div class="card-body">
