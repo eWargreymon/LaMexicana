@@ -9,9 +9,9 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/styles-login.css">
 
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="index.js"></script>
+
 </head>
 <body>
 <header id="title">
@@ -35,52 +35,75 @@
     </nav>
 
 </header>
-<div class="row">
-    <div class="simple-login-container" class="col-sm-2">
-        <h2>Inicia sesión</h2>
-        <div class="row">
-            <div class="col-md-12 form-group">
-                <input type="text" id="username" name="username" class="form-control" placeholder="Correo electrónico">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Iniciar sesión</h5>
+                    <form class="form-signin">
+                        <div class="form-label-group">
+                            <input type="email" id="inputEmail" class="form-control" placeholder="Email" autocomplete="username">
+                            <label for="inputEmail">Email</label>
+                        </div>
+
+                        <div class="form-label-group">
+                            <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña"
+                            >
+                            <label for="inputPassword">Contraseña</label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                            <label class="custom-control-label" for="customCheck1">Remember password</label>
+                        </div>
+                        <button type="submit" class="btn btn-lg btn-primary btn-block text-uppercase" onclick="login()">
+                            Entrar
+                        </button>
+                        <hr class="my-4">
+                        <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i
+                                class="fab fa-google mr-2"></i> Entrar con Google
+                        </button>
+                        <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i
+                                class="fab fa-facebook-f mr-2"></i> Entrar con Facebook
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12 form-group">
-                <input type="password" id="password" name="password" placeholder="Contraseña"
-                       class="form-control">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 form-group">
-                <button onclick="login()" id="login-button" class="btn btn-block btn-login">
-                    Aceptar
-                </button>
-            </div>
-        </div>
-    </div>
-    <hr>
-    <div class="simple-register-container" class="col-sm-2">
-        <h2>Registrarse</h2>
-        <div class="row">
-            <div class="col-md-12 form-group">
-                <input type="text" id="fullname" name="fullname" class="form-control" placeholder="Nombre completo">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 form-group">
-                <input type="password" id="email" name="email" placeholder="Correo electrónico"
-                       class="form-control">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 form-group">
-                <input type="text" id="password" name="password" class="form-control" placeholder="Contraseña">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 form-group">
-                <button onclick="registerUser()" id="register-button" class="btn btn-block btn-login">
-                    Registarme
-                </button>
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Registrarse</h5>
+                    <form class="form-signin">
+                        <div class="form-label-group">
+                            <input type="text" id="inputName" class="form-control" placeholder="Nombre completo" >
+                            <label for="inputName">Nombre Completo</label>
+                        </div>
+
+                        <div class="form-label-group">
+                            <input type="email" id="inputEmailRegister" class="form-control" placeholder="Email">
+                            <label for="inputEmailRegister">Email</label>
+                        </div>
+
+                        <div class="form-label-group">
+                            <input type="password" id="inputPasswordRegister" class="form-control"
+                                   placeholder="Contraseña">
+                            <label for="inputPasswordRegister">Contraseña</label>
+                        </div>
+
+                        <button class="btn btn-lg btn-primary btn-block text-uppercase" onclick="register()"
+                                type="submit">Registrarse
+                        </button>
+                        <hr class="my-4">
+                        <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i
+                                class="fab fa-google mr-2"></i> Registrarse con Google
+                        </button>
+                        <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i
+                                class="fab fa-facebook-f mr-2"></i> Registrarse con Facebook
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
