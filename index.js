@@ -24,10 +24,16 @@ function login() {
 
         console.log("Prueba");
 
+        var newUser =
+            {
+                "username": inputUsername,
+                "password": inputPassword
+            };
+
         for (var user in json) {
             if (json.hasOwnProperty(user)) {
                 if (json[user].username === inputUsername && json[user].password === inputPassword) {
-                    saveUser(inputUsername);
+                    saveUser(newUser);
                     window.location.href = "index.html";
                     break
                 } else {
