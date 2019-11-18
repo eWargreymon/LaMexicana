@@ -82,30 +82,28 @@
         <div class="form-row">
             <div class="form-group col-lg-6">
                 <label for="name">Telefono</label>
-                <input type="number" class="form-control" id="name" placeholder="Teléfono">
+                <input type="number" class="form-control" id="phone" placeholder="Teléfono">
             </div>
             <div class="form-group col-lg-6">
                 <label for="number">Email</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                <input type="email" class="form-control" id="email" placeholder="Email">
             </div>
         </div>
         <div class="form-group">
             <label class="control-label">Fecha y hora</label>
-            <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
-                <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1"/>
-                <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
-                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                </div>
-            </div>
+            <input type="date" id="date" name="trip-start"
+                   value="2018-07-22"
+                   min="2018-01-01" max="2025-12-31">
+            <input type="time" id="time" name="appt"
+                   min="09:00" max="18:00" required>
         </div>
         <div class="form-group">
             <label for="comments">Comentarios adicionales</label>
             <textarea class="form-control" id="comments" rows="4"></textarea>
         </div>
 
-        <div class="form-group">
+
             <button id="reservar" type="submit" class="btn btn-primary" onclick="reservation()">Reservar</button>
-        </div>
 
     </form>
     <div id="card" class="card" style="width: 18rem;">

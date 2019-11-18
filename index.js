@@ -1,47 +1,44 @@
-/*
 $(function () {
-  $('#datetimepicker1').datetimepicker();
+    $('#datetimepicker1').datetimepicker();
 });
-*/
 
 
 $(document).ready(function () {
+
     if (sessionStorage.length > 0) {
         $("li:has('a'):contains('Login')").remove();
         $(".navbar-nav").append('<li class="nav-item"><a class="nav-link" href="index.html" onclick="logOut();">Log out</a></li>');
-        $.getJSON("./users.json", function (json) {
-            var loop = 0;
-            Loop:
-            for (var user in json) {
-                loop++;
-                console.log(loop);
-                if (json.hasOwnProperty(user)) {
-                    console.log("if1");
-                    if (json[user].username === getUserLogged().username) {
-                        console.log("if2");
-                        var username = json[user].fullname;
-                        var people = json[user].reservations.personas;
-                        var useremail = json[user].username;
-                        var date = json[user].reservations.date;
-                        var observation = json[user].reservations.observation;
-                        var phone = json[user].reservations.phone;
 
-                        $("#reservationInfo").each(function(){
-                            $(this).append('<h5>Mis reservas</h5>');
-                            $(this).append( "<li>Nombre de usuario: " + username + "</li>" );
-                            $(this).append( "<li>Email: " + useremail + "</li" );
-                            $(this).append( "<li>Nº personas: " + people + "</li>" );
-                            $(this).append( "<li>Nº personas: " + people + "</li>" );
-                            $(this).append( "<li>Comentarios: " + observation + "</li>" );
-                            return false;
-                        });
-                    }
-                }
-            }
+        console.log(getUserLogged());
+
+        var user = JSON.parse(sessionStorage.getItem("user"));
+        for (var i = 0; i < user.reservations.length; i++) {
+            var username = user.fullname;
+            var people = user.reservations[i].personas;
+            var useremail = user.username;
+            var date = user.reservations[i].date;
+            var observation = user.reservations[i].observation;
+            var phone = user.reservations[i].phone;
+
+            $(".card-body").each(function () {
+                $(this).append('<h5>Mis reservas</h5>');
+                $(this).append("<li>Nombre de usuario: " + username + "</li>");
+                $(this).append("<li>Email: " + useremail + "</li");
+                $(this).append("<li>Nº personas: " + people + "</li>");
+                $(this).append("<li>Fecha: " + date + "</li>");
+                $(this).append("<li>Teléfono: " + phone + "</li>");
+                $(this).append("<li>Comentarios: " + observation + "</li>");
+            });
+        }
+    } else {
+        $("#reservationInfo").each(function () {
+            $(this).append('<h5>Mis reservas</h5>');
+            $(this).append("<li>Aun no tiene reservas" + "</li>");
+
         });
     }
-
 });
+
 
 function login() {
 
@@ -52,15 +49,11 @@ function login() {
 
         console.log("Prueba");
 
-        var newUser =
-            {
-                "username": inputUsername,
-                "password": inputPassword
-            };
 
         for (var user in json) {
             if (json.hasOwnProperty(user)) {
                 if (json[user].username === inputUsername && json[user].password === inputPassword) {
+                    newUser = json[user];
                     saveUser(newUser);
                     window.location.href = "index.html";
                     break
@@ -112,18 +105,37 @@ function register() {
 
 
 function reservation() {
-    var inputPersonas = document.getElementById("inputName").value;
-    var inputEmail = document.getElementById("inputEmailRegister").value;
-    var inputDate = document.getElementById("inputPasswordRegister").value;
-    var inputObersvation = document.getElementById("inputPasswordRegister").value;
-    if (sessionStorage.length === 0) {
-        if (confirm('Para hacer una revera debe estar registrado, ¿ desea hacerlo ?.')) {
-            window.location.href = "login.html";
+
+
+    if (sessionStorage.getItem('user') != null) {
+        var inputNombre = document.getElementById("name").value;
+        var inputPersonas = document.getElementById("number").value;
+        var inputPhone = document.getElementById("phone").value;
+        var inputDate = document.getElementById("date").value;
+        var inputHour = document.getElementById("time").value;
+        var inputObservation = document.getElementById("comments").value;
+        alert("Reserva realizada con éxito para la fecha: " + inputDate);
+        var user1 = JSON.parse(sessionStorage.getItem("user"));
+
+        user1['reservations'].push({
+            "personas": inputPersonas,
+            "phone": inputPhone,
+            "date": "Fecha: " + inputDate + " hora:" + inputHour,
+            "observation": inputObservation
+        });
+
+        saveUser(user1);
+        window.location.href = "index.html";
+        //saveUser(user);
+
+    } else {
+        if (confirm('Para hacer una revera debe estar registrado, ¿ desea hacerlo ?.') === true) {
+            location.href = "login.html";
         }
 
     }
-}
 
+}
 
 function saveUser(userInfo) {
     sessionStorage.setItem("user", JSON.stringify(userInfo));
