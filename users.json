@@ -1,13 +1,16 @@
 [
   {
+    "fullname": "prueba",
     "username": "prueba@prueba.com",
     "password": "prueba"
   },
   {
+    "fullname": "prueba2",
     "username": "prueba2@prueba.com",
     "password": "prueba2"
   },
   {
+    "fullname": "prueba3",
     "username": "prueba3@prueba.com",
     "password": "prueba3"
   }
