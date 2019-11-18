@@ -5,13 +5,41 @@ $(function () {
 */
 
 
-
 $(document).ready(function () {
     if (sessionStorage.length > 0) {
         $("li:has('a'):contains('Login')").remove();
         $(".navbar-nav").append('<li class="nav-item"><a class="nav-link" href="index.html" onclick="logOut();">Log out</a></li>');
+        $.getJSON("./users.json", function (json) {
+            var loop = 0;
+            Loop:
+            for (var user in json) {
+                loop++;
+                console.log(loop);
+                if (json.hasOwnProperty(user)) {
+                    console.log("if1");
+                    if (json[user].username === getUserLogged().username) {
+                        console.log("if2");
+                        var username = json[user].fullname;
+                        var people = json[user].reservations.personas;
+                        var useremail = json[user].username;
+                        var date = json[user].reservations.date;
+                        var observation = json[user].reservations.observation;
+                        var phone = json[user].reservations.phone;
+
+                        $("#reservationInfo").each(function(){
+                            $(this).append('<h5>Mis reservas</h5>');
+                            $(this).append( "<li>Nombre de usuario: " + username + "</li>" );
+                            $(this).append( "<li>Email: " + useremail + "</li" );
+                            $(this).append( "<li>Nº personas: " + people + "</li>" );
+                            $(this).append( "<li>Nº personas: " + people + "</li>" );
+                            $(this).append( "<li>Comentarios: " + observation + "</li>" );
+                            return false;
+                        });
+                    }
+                }
+            }
+        });
     }
-    console.log(getUserLogged());
 
 });
 
@@ -80,6 +108,20 @@ function register() {
             alert("Este correo ya se encuentra registrado");
         }
     });
+}
+
+
+function reservation() {
+    var inputPersonas = document.getElementById("inputName").value;
+    var inputEmail = document.getElementById("inputEmailRegister").value;
+    var inputDate = document.getElementById("inputPasswordRegister").value;
+    var inputObersvation = document.getElementById("inputPasswordRegister").value;
+    if (sessionStorage.length === 0) {
+        if (confirm('Para hacer una revera debe estar registrado, ¿ desea hacerlo ?.')) {
+            window.location.href = "login.html";
+        }
+
+    }
 }
 
 
