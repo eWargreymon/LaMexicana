@@ -2,7 +2,15 @@
   {
     "fullname": "prueba",
     "username": "prueba@prueba.com",
-    "password": "prueba"
+    "password": "prueba",
+    "reservations": [
+      {
+      "personas": "2",
+      "phone": "62768321",
+      "date": "13/12/2019",
+      "observation": "Mesa junto a la ventana"
+    }
+    ]
   },
   {
     "fullname": "prueba2",
