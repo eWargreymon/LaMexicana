@@ -1,7 +1,12 @@
 
 
 $(document).ready(function () {
+    
+    checkLoggedUser();
 
+});
+
+function checkLoggedUser() {
     if (sessionStorage.length > 0) {
         $("li:has('a'):contains('Login')").remove();
         $(".navbar-nav").append('<li class="nav-item"><a class="nav-link" href="index.html" onclick="logOut();">Log out</a></li>');
@@ -34,25 +39,8 @@ $(document).ready(function () {
 
         });
     }
-});
-
-/*
-function prueba() {
-    var loged;
-    $.ajax({
-        type: "GET",
-        dataType: "json",
-        url: "http://localhost:3000/api/v1/users",
-        data: {},
-        success: function (data) {
-            console.log(data);
-            var inputUsername = document.getElementById("inputEmail").value;
-            var inputPassword = document.getElementById("inputPassword").value;
-
-        }
-    });
+    
 }
-*/
 
 
 
@@ -78,6 +66,7 @@ function login() {
         },
         success:function(data){
             if (data.status === 200) {
+                sessionStorage.setItem("user", data.user)
                 window.location.href = "index.html";
             } else if(data.status === 400){
                 alert("El usuario o la contraseña son incorrectas")
