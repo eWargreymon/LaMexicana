@@ -62,8 +62,8 @@ function prueba() {
 function login() {
 
 
-    var inputEmail = document.getElementById("inputEmail").value;
-    var inputPassword = document.getElementById("inputPassword").value;
+     inputEmail = document.getElementById("inputEmail").value;
+     inputPassword = document.getElementById("inputPassword").value;
 
 
 
@@ -73,7 +73,7 @@ function login() {
         dataType:'json',
         contentType : "application/json",
         data:{
-            email: inputEmail,
+            username: inputEmail,
             password: inputPassword
         },
         success:function(data){
@@ -94,32 +94,27 @@ function register() {
     var inputName = document.getElementById("inputName").value;
     var inputEmail = document.getElementById("inputEmailRegister").value;
     var inputPassword = document.getElementById("inputPasswordRegister").value;
-    $.getJSON("./users.json", function (json) {
 
-
-        var reigstrado = 0;
-
-        // JSON
-        var newUser =
-            {
-                "fullname": inputName,
-                "username": inputEmail,
-                "password": inputPassword
-            };
-
-
-        for (var user in json) {
-            if (json.hasOwnProperty(user)) {
-                if (json[user].username === inputEmail) {
-                    reigstrado++;
-                }
+    $.ajax({
+        url:'http://localhost:3000/api/v1/users',
+        type:'POST',
+        dataType:'json',
+        contentType : "application/json",
+        data: JSON.stringify({
+            fullname: inputName,
+            username: inputEmail,
+            password: inputPassword
+        }),
+        success:function(data){
+            if (data.status === 200) {
+                alert("El usuario con el correo: " + inputEmail + " se ha registrado con éxito")
+                window.location.href = "index.html";
+            } else if(data.status === 400){
+                alert("Ocurió algún fallo en el proceso de registro")
             }
-        }
-        if (reigstrado === 0) {
-            saveUser(newUser);
-            window.location.href = "index.html";
-        } else {
-            alert("Este correo ya se encuentra registrado");
+        },
+        error:function(data){
+            console.log(data)
         }
     });
 }
