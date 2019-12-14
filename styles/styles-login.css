@@ -1,31 +1,22 @@
-/* Navigation Bar */
+/* Footer Section */
 
-.navbar {
-    padding: 2% 10% 2%;
-    text-align: left;
-    background-color: #000;
+#footer {
+    background-color: black;
 }
 
-.navbar-brand {
-    width: 40%;
-    transition: transform .2s;
+.white {
+    color: white;
 }
 
-.navbar-brand:hover {
-    transform: scale(1.2);
-}
-
-.nav-item {
-    font-family: 'Ubuntu', sans-serif;
-    padding: 0 0.5em;
-}
-
-.nav-link {
-    font-size: 1.2rem;
+.copyright-and-rrss {
+    border-top: 1px solid white;
 }
 
 /* Login form */
 
+.row {
+    margin-bottom: 5em;
+}
 
 :root {
     --input-padding-x: 1.5rem;
