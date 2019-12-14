@@ -27,8 +27,7 @@
     <script src="https://kit.fontawesome.com/43e42a9ddc.js"></script>
 
     <!--JQuery and JS-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
 <header id="title">
@@ -60,7 +59,7 @@
                     <h5 class="card-title text-center">Iniciar sesión</h5>
                     <form class="form-signin">
                         <div class="form-label-group">
-                            <input type="email" id="inputEmail" class="form-control" placeholder="Email" autocomplete="username">
+                            <input type="text" id="inputEmail" class="form-control" placeholder="Email" autocomplete="username">
                             <label for="inputEmail">Email</label>
                         </div>
 
@@ -74,7 +73,7 @@
                             <input type="checkbox" class="custom-control-input" id="customCheck1">
                             <label class="custom-control-label" for="customCheck1">Remember password</label>
                         </div>
-                        <button type="submit" class="btn btn-lg btn-primary btn-block text-uppercase" onclick="login()">
+                        <button type="button" class="btn btn-lg btn-primary btn-block text-uppercase" onclick="login()">
                             Entrar
                         </button>
                         <hr class="my-4">
@@ -110,7 +109,7 @@
                         </div>
 
                         <button class="btn btn-lg btn-primary btn-block text-uppercase" onclick="register()"
-                                type="submit">Registrarse
+                                type="button">Registrarse
                         </button>
                         <hr class="my-4">
                         <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i
@@ -125,5 +124,29 @@
         </div>
     </div>
 </div>
+<footer id="footer">
+    <div class="row">
+        <div class="col-lg-6 contact white">
+            <h3>Datos de contacto.</h3>
+            <p>C/ La Centrífuga 22, Vecindario</p>
+            <p>Las Palmas de Gran Canaria</p>
+            <p><strong>Teléfono:</strong> 928 12 58 68</p>
+        </div>
+        <div class="col-lg-6 contact white">
+            <h3>Horarios</h3>
+            <p>Lunes a Viernes de 12.00 a 20.00 horas.</p>
+            <p>Sábados de 12.00 a 23.00 horas.</p>
+            <p>Domingos de 12.00 a 15.00 horas.</p>
+        </div>
+    </div>
+    <div class="copyright-and-rrss white">
+        <i class="rrss fab fa-twitter"></i>
+        <i class="rrss fab fa-instagram"></i>
+        <i class="rrss fab fa-facebook-f"></i>
+        <i class="rrss fas fa-envelope"></i>
+        <p class="copyright">© Copyright 2019 La Mexicana</p>
+    </div>
+</footer>
+
 </body>
 </html>

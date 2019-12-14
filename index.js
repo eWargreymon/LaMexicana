@@ -1,10 +1,12 @@
-$(function () {
-    $('#datetimepicker1').datetimepicker();
-});
 
 
 $(document).ready(function () {
+    
+    checkLoggedUser();
 
+});
+
+function checkLoggedUser() {
     if (sessionStorage.length > 0) {
         $("li:has('a'):contains('Login')").remove();
         $(".navbar-nav").append('<li class="nav-item"><a class="nav-link" href="index.html" onclick="logOut();">Log out</a></li>');
@@ -37,35 +39,43 @@ $(document).ready(function () {
 
         });
     }
-});
+    
+}
+
+
+
+
 
 
 function login() {
 
-    var inputUsername = document.getElementById("inputEmail").value;
-    var inputPassword = document.getElementById("inputPassword").value;
-    $.getJSON("./users.json", function (json) {
+
+     inputEmail = document.getElementById("inputEmail").value;
+     inputPassword = document.getElementById("inputPassword").value;
 
 
-        console.log("Prueba");
 
-
-        for (var user in json) {
-            if (json.hasOwnProperty(user)) {
-                if (json[user].username === inputUsername && json[user].password === inputPassword) {
-                    newUser = json[user];
-                    saveUser(newUser);
-                    window.location.href = "index.html";
-                    break
-                } else {
-                    alert("Usuario o contraseña incorrecto, inténtelo de nuevo");
-                    break
-                }
+    $.ajax({
+        url:'http://localhost:3000/api/v1/users/show',
+        type:'GET',
+        dataType:'json',
+        contentType : "application/json",
+        data:{
+            username: inputEmail,
+            password: inputPassword
+        },
+        success:function(data){
+            if (data.status === 200) {
+                sessionStorage.setItem("user", data.user)
+                window.location.href = "index.html";
+            } else if(data.status === 400){
+                alert("El usuario o la contraseña son incorrectas")
             }
+        },
+        error:function(data){
+            console.log(data)
         }
     });
-
-    console.log(inputUsername);
 
 }
 
@@ -73,32 +83,27 @@ function register() {
     var inputName = document.getElementById("inputName").value;
     var inputEmail = document.getElementById("inputEmailRegister").value;
     var inputPassword = document.getElementById("inputPasswordRegister").value;
-    $.getJSON("./users.json", function (json) {
 
-
-        var reigstrado = 0;
-
-        // JSON
-        var newUser =
-            {
-                "fullname": inputName,
-                "username": inputEmail,
-                "password": inputPassword
-            };
-
-
-        for (var user in json) {
-            if (json.hasOwnProperty(user)) {
-                if (json[user].username === inputEmail) {
-                    reigstrado++;
-                }
+    $.ajax({
+        url:'http://localhost:3000/api/v1/users',
+        type:'POST',
+        dataType:'json',
+        contentType : "application/json",
+        data: JSON.stringify({
+            fullname: inputName,
+            username: inputEmail,
+            password: inputPassword
+        }),
+        success:function(data){
+            if (data.status === 200) {
+                alert("El usuario con el correo: " + inputEmail + " se ha registrado con éxito")
+                window.location.href = "index.html";
+            } else if(data.status === 400){
+                alert("Ocurió algún fallo en el proceso de registro")
             }
-        }
-        if (reigstrado === 0) {
-            saveUser(newUser);
-            window.location.href = "index.html";
-        } else {
-            alert("Este correo ya se encuentra registrado");
+        },
+        error:function(data){
+            console.log(data)
         }
     });
 }
