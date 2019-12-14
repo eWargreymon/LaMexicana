@@ -43,3 +43,19 @@ h2 {
     padding: 5% 0;
   }
 }
+
+@media (max-width: 1024px) and (min-width: 1024px){
+
+  h2 {
+    padding-top: 5%;
+  }
+
+  .mapouter {
+    padding: 0 40%;
+  }
+
+  .info {
+    padding: 0 10%;
+    margin: 0 0 1.5em 15em;
+  }
+}

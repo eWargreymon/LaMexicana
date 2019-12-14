@@ -1,6 +1,3 @@
-$(function () {
-    $('#datetimepicker1').datetimepicker();
-});
 
 
 $(document).ready(function () {
@@ -39,33 +36,57 @@ $(document).ready(function () {
     }
 });
 
+/*
+function prueba() {
+    var loged;
+    $.ajax({
+        type: "GET",
+        dataType: "json",
+        url: "http://localhost:3000/api/v1/users",
+        data: {},
+        success: function (data) {
+            console.log(data);
+            var inputUsername = document.getElementById("inputEmail").value;
+            var inputPassword = document.getElementById("inputPassword").value;
+
+        }
+    });
+}
+*/
+
+
+
+
+
 
 function login() {
 
-    var inputUsername = document.getElementById("inputEmail").value;
+
+    var inputEmail = document.getElementById("inputEmail").value;
     var inputPassword = document.getElementById("inputPassword").value;
-    $.getJSON("./users.json", function (json) {
 
 
-        console.log("Prueba");
 
-
-        for (var user in json) {
-            if (json.hasOwnProperty(user)) {
-                if (json[user].username === inputUsername && json[user].password === inputPassword) {
-                    newUser = json[user];
-                    saveUser(newUser);
-                    window.location.href = "index.html";
-                    break
-                } else {
-                    alert("Usuario o contraseña incorrecto, inténtelo de nuevo");
-                    break
-                }
+    $.ajax({
+        url:'http://localhost:3000/api/v1/users/show',
+        type:'GET',
+        dataType:'json',
+        contentType : "application/json",
+        data:{
+            email: inputEmail,
+            password: inputPassword
+        },
+        success:function(data){
+            if (data.status === 200) {
+                window.location.href = "index.html";
+            } else if(data.status === 400){
+                alert("El usuario o la contraseña son incorrectas")
             }
+        },
+        error:function(data){
+            console.log(data)
         }
     });
-
-    console.log(inputUsername);
 
 }
 
