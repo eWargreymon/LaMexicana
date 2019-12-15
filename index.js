@@ -13,7 +13,7 @@ function checkLoggedUser() {
 
         //console.log(getUserLogged());
 
-        var user = JSON.parse(sessionStorage.getItem("user"));
+        var user = sessionStorage.getItem("user");
         for (var i = 0; i < user.reservations.length; i++) {
             var username = user.fullname;
             var people = user.reservations[i].personas;
@@ -66,7 +66,8 @@ function login() {
         },
         success:function(data){
             if (data.status === 200) {
-                sessionStorage.setItem("user", data.user)
+                console.log("correcto",data.user.toString());
+                sessionStorage.setItem("user", JSON.stringify(data.user));
                 window.location.href = "index.html";
             } else if(data.status === 400){
                 alert("El usuario o la contraseña son incorrectas")
@@ -113,6 +114,8 @@ function reservation() {
 
 
     if (sessionStorage.getItem('user') != null) {
+
+        console.log("entro a la reserva");
         var inputNombre = document.getElementById("name").value;
         var inputPersonas = document.getElementById("number").value;
         var inputPhone = document.getElementById("phone").value;
@@ -120,24 +123,36 @@ function reservation() {
         var inputHour = document.getElementById("time").value;
         var inputObservation = document.getElementById("comments").value;
         var inputEmail = document.getElementById("email").value;
+        var user_id = JSON.parse(sessionStorage.getItem('user')).id;
+        console.log(user_id);
         if(inputNombre == '' || inputDate == ''|| inputPhone == '' || inputEmail == '' || inputHour == '') {
             alert("Debe rellenar el campo nombre antes de continuar");
             return;
         }
-        alert("Reserva realizada con éxito para la fecha: " + inputDate);
-        var user1 = JSON.parse(sessionStorage.getItem("user"));
-
-        user1['reservations'].push({
-            "personas": inputPersonas,
-            "phone": inputPhone,
-            "date": "Fecha: " + inputDate + " hora:" + inputHour,
-            "observation": inputObservation
+        $.ajax({
+            url:'http://localhost:3000/api/v1/reservations',
+            type:'POST',
+            dataType:'json',
+            contentType : "application/json",
+            data: JSON.stringify({
+                people: inputPersonas,
+                phone: inputPhone,
+                date: inputDate,
+                observations: inputObservation,
+                user_id: user_id
+            }),
+            success:function(data){
+                if (data.status === 200) {
+                    alert("La reserva se ha realizado con éxito")
+                    window.location.href = "index.html";
+                } else if(data.status === 400){
+                    alert("Ocurió algún fallo durante la reserva")
+                }
+            },
+            error:function(data){
+                console.log(data)
+            }
         });
-
-        saveUser(user1);
-        window.location.href = "index.html";
-        //saveUser(user);
-
     } else {
         if (confirm('Para hacer una revera debe estar registrado, ¿ Desea hacerlo ?.')) {
             location.href = "login.html";
