@@ -56,7 +56,7 @@ function login() {
 
 
     $.ajax({
-        url:'http://localhost:3000/api/v1/users/show',
+        url:'https://afternoon-fjord-97815.herokuapp.com/api/v1/users/show',
         type:'GET',
         dataType:'json',
         contentType : "application/json",
@@ -86,7 +86,7 @@ function register() {
     var inputPassword = document.getElementById("inputPasswordRegister").value;
 
     $.ajax({
-        url:'http://localhost:3000/api/v1/users',
+        url:'https://afternoon-fjord-97815.herokuapp.com/api/v1/users',
         type:'POST',
         dataType:'json',
         contentType : "application/json",
@@ -130,7 +130,7 @@ function reservation() {
             return;
         }
         $.ajax({
-            url:'http://localhost:3000/api/v1/reservations',
+            url:'https://afternoon-fjord-97815.herokuapp.com/api/v1/reservations',
             type:'POST',
             dataType:'json',
             contentType : "application/json",
